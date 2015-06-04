@@ -1,0 +1,14 @@
+{
+  "name": {
+    "message": "Quick Screenshot"
+  },
+  "title": {
+    "message": "Quick Screenshot"
+  },
+  "short_name": {
+    "message": "Quick Screenshot"
+  },
+  "description": {
+    "message": "Quick Screenshot extension for Chrome"
+  }
+}

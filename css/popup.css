@@ -1,0 +1,43 @@
+body {
+    width:150px;
+    color:#000;
+    font-size: 16px;
+    font-family: 'Roboto','Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin: 0;
+}
+
+ul {
+  padding:0;
+  margin:0;
+}
+
+ul li{
+  list-style:none;
+}
+
+ul li.sep {
+    height: 1px;
+    margin: 1px 0;
+    background-color: #eee;
+}
+
+ul li a {
+    color:#303030; text-decoration:none;
+    display: block;
+    padding: 5px;
+
+}
+
+ul li a:hover {
+    background-color: #eceff5;
+    color: #000;
+    cursor:pointer;
+}
+
+a span.first{height: 16px; width: 16px;}
+a span { float:left; width:20px; height:20px; margin-right:5px; }
+a#entire span { background:url(../icon/popup-entire.png) no-repeat; }
+a#visible span { background:url(../icon/popup-visible.png) no-repeat; }
+a#select span { background:url(../icon/popup-select.png) no-repeat;}
+a#desktop span { background:url(../icon/popup-desktop.png) no-repeat;}
+a#option span{ background:url(../icon/popup-options.png) no-repeat; }

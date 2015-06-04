@@ -1,0 +1,75 @@
+.left {
+    float: left}
+.right {
+    float: right}
+* {
+    box-sizing: border-box}
+body {
+    background-color: #fff;
+    font-family: 'Roboto',sans-serif;
+    color: #444;
+    font-size: 14px;
+    margin: 0}
+h1 {
+    margin: 0;
+    font-size: 1.6em;
+    font-weight: 500}
+a {
+    color: #67ab49;
+    text-decoration: none;
+}
+a:hover {
+    color: #5c9941}
+p {
+    font-size: 1.2em}
+.button {
+    width: 100%;
+    background: #67ab49;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 10px 11px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: background 150ms;
+}
+.button:hover {
+    background: #74b756}
+.button:active {
+    box-shadow: inset 0 2px 3px #518739}
+header {
+    background: #67ab49;
+    padding: 10px 20px;
+    height: 60px;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+}
+header a {
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    transition: background 150ms;
+}
+header a:hover {
+    color: #fff;
+    background: #74b756}
+header .header-left {
+    margin-top: 4px;
+}
+header .header-left h1 {
+    display: inline}
+header .header-right {
+    font-size: 1em;
+    font-weight: 500;
+    color: #fff}
+.wrapper {
+  padding-top: 60px;
+  margin: 0 auto;
+  text-align: center;
+}
+.content img {
+  /* width: 100%; */
+}
