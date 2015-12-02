@@ -1,51 +1,9 @@
-// chrome.systemIndicator.setIcon({
-//   path: {
-//     "19": "icon/quick-screenshot-19.png",
-//     "38": "icon/quick-screenshot-38.png"
-//   }
-// });
-
-// chrome.systemIndicator.enable();
-//
-// chrome.systemIndicator.onClicked.addListener(function(tab) {
-//   chrome.tabs.create({url: 'index.html'});
-// });
-
 // To make sure we can uniquely identify each screenshot tab, add an id as a
 // query param to the url that displays the screenshot.
 // Note: It's OK that this is a global variable (and not in localStorage),
 // because the event page will stay open as long as any screenshot tabs are
 // open.
 //
-
-// var storage = {
-//   get: (function(key) {
-//     return JSON.parse(localStorage.getItem(key));
-//   }),
-//
-//   set: (function(key, value) {
-//     value = JSON.stringify(value);
-//     localStorage.setItem(key, value);
-//   }),
-//
-//   has: (function(key) {
-//     if(localStorage.hasOwnProperty(key)) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//   }),
-//
-//   remove: (function(key) {
-//     if(localStorage.hasOwnProperty(key)) {
-//       localStorage.removeItem(key);
-//     }
-//   }),
-// };
-
-// chrome.runtime.onStartup.addListener(function(){
-//   storage.set("id", 100);
-// });
 
 var id = 100;
 function captureVisibleTab() {
@@ -83,4 +41,38 @@ function captureVisibleTab() {
       targetId = tab.id;
     });
   });
+}
+
+function gotStream(stream) {
+  console.log("Received local stream");
+  var video = document.querySelector("video");
+  video.src = URL.createObjectURL(stream);
+  localstream = stream;
+  stream.onended = function() { console.log("Ended"); };
+}
+
+function getUserMediaError() {
+  console.log("getUserMedia() failed.");
+}
+
+function onAccessApproved(id) {
+  if (!id) {
+    console.log("Access rejected.");
+    return;
+  }
+
+  navigator.webkitGetUserMedia({
+    audio:false,
+    video: {
+      mandatory: {
+        chromeMediaSource: "desktop",
+        chromeMediaSourceId: id,
+        maxWidth:screen.width,
+        maxHeight:screen.height} }
+  }, gotStream, getUserMediaError);
+}
+
+function captureDesktop() {
+  chrome.desktopCapture.chooseDesktopMedia(
+      ["screen", "window"], onAccessApproved);
 }

@@ -14,7 +14,9 @@ $(document).ready(function(){
   });
 
   $("#desktop").click(function(){
-    window.close();
+    chrome.runtime.getBackgroundPage(function(backgroundPage){
+      backgroundPage.captureDesktop();
+    });
   });
 
   $("#option").click(function(){

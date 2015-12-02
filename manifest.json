@@ -24,11 +24,5 @@
       "38": "icon/quick-screenshot-38.png"
     }
   },
-  "system_indicator": {
-    "default_icon": {
-      "19": "icon/quick-screenshot-indicator-19.png",
-      "38": "icon/quick-screenshot-indicator-38.png"
-    }
-  },
-  "permissions": ["activeTab"]
+  "permissions": ["activeTab", "desktopCapture"]
 }
