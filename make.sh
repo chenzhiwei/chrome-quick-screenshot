@@ -10,7 +10,7 @@ extension() {
     dir="$base/Extension"
     $RM -rf "$dir"
     $MKDIR -p "$dir"
-    $CP -rf $base/{_locales,css,icon,js,manifest.json,index.html} "$dir"
+    $CP -rf $base/{_locales,css,icon,js,manifest.json,index.html,options.html,popup.html} "$dir"
 }
 
 extension
