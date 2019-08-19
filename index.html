@@ -4,7 +4,10 @@
   <title>Quick Screenshot</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/darkroom.css">
   <script src="js/index.js"></script>
+  <script src="js/fabric.js"></script>
+  <script src="js/darkroom.js"></script>
 </head>
 <body>
 
@@ -18,6 +21,9 @@
   <div class="content wrapper">
     <img src="icon/white.png" id="target">
   </div>
+  <script>
+    new Darkroom('#target');
+  </script>
 
 </body>
 </html>
